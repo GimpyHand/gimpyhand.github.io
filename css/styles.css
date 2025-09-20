@@ -1,0 +1,419 @@
+/*
+  Alex Jessup — Portfolio Stylesheet
+  Organized with section headers for quick navigation.
+
+  SECTIONS
+  1. Globals (Base, Elements)
+  2. Navigation
+  3. Typography & Headings
+  4. Avatar
+  5. Projects
+  6. Skills (Charts, Donuts, Labels, Table Layout)
+  7. Contact Form
+  8. Footer
+  9. Background Rays
+ 10. Animations
+*/
+
+/* =============================
+   1) Globals (Base, Elements)
+   ============================= */
+.forum-regular {
+  font-family: "Forum", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  padding: 1rem;
+  background-color: #3b3b3b;
+  font-family: "Forum", serif;
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+textarea {
+  width: 315px;
+}
+
+p {
+  color: #FFFFFF;
+  font-size: x-large;
+  font-family: "Forum", serif;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+img {
+  border-radius: 10px;
+  width:19%;
+  z-index: 1;
+}
+/* =============================
+   2) Navigation
+   ============================= */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #3b3b3b;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  align-items: center;
+  text-align: center;
+  border-bottom: solid 1px #8271ff;
+}
+
+a.nav {
+  color: #8271ff;
+  font-weight: 600;
+  font-size: xx-large;
+  font-family: "VT323", monospace;
+  text-decoration: none;
+}
+
+/* =============================
+   3) Typography & Headings
+   ============================= */
+h1 {
+  text-align: center;
+  font-family: "VT323", monospace;
+  font-size: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  animation: blink 2s infinite;
+  animation-fill-mode: both;
+  color: #FFFFFF
+
+}
+
+h2 {
+  text-align: center;
+  margin-top: 40px;
+  font-family: "VT323", monospace;
+  font-size: 40px;
+  margin-bottom: 5px;
+  color: #FFFFFF;
+}
+
+h3 {
+  text-align: left;
+  font-family: "VT323", monospace;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #8271ff;
+}
+
+h4 {
+  text-align: left;
+  font-family: "VT323", monospace;
+  font-size: 25px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #00F8F1;
+}
+
+a {
+  color: #8271ff;
+  font-weight: 700;
+  font-size: large;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 50%;
+}
+
+footer a {
+  color: #00F8F1;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+h3 a {
+  color: #8271ff;
+  text-align: left;
+  font-family: "VT323", monospace;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+
+h3 a:hover {
+  color: #8271ff;
+  text-align: left;
+  font-family: "VT323", monospace;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 0;
+  opacity: 50%;
+}
+
+/* =============================
+   4) Avatar
+   ============================= */
+#avatar {
+  display: block;
+  margin: auto;
+  width: 300px;
+  clip-path: circle(50%);
+  z-index: 1;
+  margin-bottom: -20px;
+}
+
+/* =============================
+   5) Projects
+   ============================= */
+.projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:.25%;
+  z-index: 1;
+}
+
+.projects img:hover {
+    scale: 1.05;
+    z-index: 2;
+    box-shadow: 0 0 25px 10px #00F8F1;
+
+}
+/* =============================
+   6) Skills (Charts, Donuts, Labels, Table Layout)
+   ============================= */
+.charts-container {
+  --chart-size: clamp(70px, 16vw, 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+
+}
+
+/* Skills > Donut charts (per-skill) */
+.chart.html {
+  width: var(--chart-size);
+  height: var(--chart-size);
+  border-radius: 100%;
+  background: conic-gradient(#8271ff 0deg 340deg, #dbdada 340deg 360deg);
+  margin-inline: 15px;
+
+}
+
+.chart.javascript {
+  width: var(--chart-size);
+  height: var(--chart-size);
+  border-radius: 100%;
+  background: conic-gradient(#8271ff 0deg 40deg, #dbdada 40deg 360deg);
+  margin-inline: 15px;
+
+}
+
+.chart.python {
+  width: var(--chart-size);
+  height: var(--chart-size);
+  border-radius: 100%;
+  background: conic-gradient(#8271ff 0deg 195deg, #dbdada 195deg 360deg);
+  margin-inline: 15px;
+
+}
+
+.chart.blender {
+  width: var(--chart-size);
+  height: var(--chart-size);
+  border-radius: 100%;
+  background: conic-gradient(#8271ff 0deg 260deg, #dbdada 260deg 360deg);
+  margin-inline: 15px;
+
+}
+
+.chart.adobe {
+  width: var(--chart-size);
+  height: var(--chart-size);
+  border-radius: 100%;
+  background: conic-gradient(#8271ff 0deg 320deg, #dbdada 320deg 360deg);
+  margin-inline: 15px;
+
+}
+
+.chart.linux {
+  width: var(--chart-size);
+  height: var(--chart-size);
+  border-radius: 100%;
+  background: conic-gradient(rgb(130, 113, 255) 0deg 300deg, #dbdada 300deg 360deg);
+  margin-inline: 15px;
+
+}
+.donut {
+  display: grid;
+  place-items: center;
+}
+
+/* Skills > Donut hole */
+.donut::after {
+  content: "";
+  display: block;
+  width: calc(var(--chart-size) * 0.6);
+  height: calc(var(--chart-size) * 0.6);
+  background: #3b3b3b;
+  border-radius: 100%;
+}
+
+/* Skills > Labels */
+.skill {
+  font-size: 25px;
+  width: var(--chart-size);
+  text-align: center;
+  margin-top: 10px;
+  margin-inline: 0;
+  font-family: "VT323", monospace;
+  color: #00F8F1;
+  white-space: nowrap;
+}
+
+/* Skills > Table layout */
+.charts-container table {
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    border: 0;
+}
+
+.charts-container tr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.charts-container td {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border: 0;
+}
+
+
+/* Normalize donut margins so donuts and labels align perfectly */
+.chart {
+    margin-inline: 0;
+}
+
+/* =============================
+   7) Contact Form
+   ============================= */
+#contact {
+  display: block;
+  width: 360px;
+  border: 5px solid rgb(130, 113, 255, 0.5);
+  padding: 10px;
+  border-radius: 15px;
+  margin: 0 auto;
+  color: #FFFFFF;
+  z-index: 1;
+  text-align: center;
+}
+
+#contact:hover {
+    box-shadow: #8271ff 0px 0px 20px;
+}
+
+.label {
+  text-align: center;
+  width: 150px;
+  color: #FFFFFF;
+}
+
+.button-group {
+  margin: -10px 0 10px 0;
+  text-align: center;
+  z-index: 1;
+}
+
+/* =============================
+   8) Footer
+   ============================= */
+footer {
+  text-align: center;
+  font-size: small;
+  color:#FFFFFF;
+  margin-top:25px;
+}
+
+
+/* =============================
+   9) Background Rays
+   ============================= */
+.s__rays {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  width: 350px;
+  z-index: -1;
+
+}
+
+.a-rays {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: .3;
+    pointer-events: none;
+    transform: skew(-20deg);
+    transition: opacity .7s linear;
+    will-change: opacity;
+    z-index: -1;
+}
+
+.a-rays .a__scene {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translate3d(-50%,0,0);
+}
+.a-rays .a__scene path {
+    stroke-linecap: round;
+    stroke-width: 2px;
+    animation: a-rays-move 25s linear infinite;
+    will-change: transform;
+    z-index: -1;
+}
+
+/* =============================
+   10) Animations
+   ============================= */
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Background Rays animation */
+@keyframes a-rays-move {
+  0% {
+      transform: translateZ(0);
+  }
+  100% {
+      transform: translate3d(0,-100%,0);
+  }
+}

@@ -6,8 +6,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
-        <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="icon" href="assets/favicon.ico" type="image/x-icon"/>
         <title>Alex Jessup's Portfolio</title>
     </head>
     <body>
@@ -47,8 +47,8 @@
             </svg>
             </div>
         </div>
-        <h1 id="home">WELCOME TO MY DIGITAL PORFTOLIO</h1>
-        <img src="images/Avatar.webp" alt="Headshot of Alex" id="avatar" title="Alex Jessup">
+        <h1 id="banner">WELCOME TO MY DIGITAL PORFTOLIO</h1>
+        <img src="assets/Avatar.webp" alt="Illustrated headshot of Alex" id="avatar" title="Alex Jessup">
         <h2 id="about">WHO AM I?</h2>
              <p>
                  I’m not your typical developer/computer guy. Sure, I work in IT and have spent years in roles ranging from system administration and hardware support to DevOps engineering, but my path here wasn’t just about computers. I studied graphic design, love building things with my hands, and enjoy projects that let me balance creativity with problem-solving.
@@ -90,11 +90,11 @@
             </p>
         <h2 id="projects">PROJECTS</h2>
             <div class="projects">
-                <img src="images/coding.webp" alt="Coding project" title="Coding projects">
-                <img src="images/design.webp" alt="Design project" title="Design projects">
-                <img src="images/modelling.webp" alt="3D modelling project" title="3D modelling projects">
-                <img src="images/music.webp" alt="Music project" title="Music projects">
-                <img src="images/blog.webp" alt="" title="Random projects">
+                <img src="assets/coding.webp" alt="Coding project" title="Coding projects">
+                <img src="assets/design.webp" alt="Design project" title="Design projects">
+                <img src="assets/modelling.webp" alt="3D modelling project" title="3D modelling projects">
+                <img src="assets/music.webp" alt="Music project" title="Music projects">
+                <img src="assets/blog.webp" alt="Blog" title="Blog">
             </div>
         <h2 id="skills">SKILLS</h2>
         <div class="charts-container">
@@ -114,39 +114,28 @@
             </table>
         </div>
         <h2 id="letschat">WANNA CHAT?</h2>
-        <form>
-            <table id="contact">
-                <tr>
-                    <td class="label"><label for="from">NAME:*</label></td>
-                    <td><input type="text" id="from" name="From" placeholder="Alex Jessup" required></td>
-                </tr>
-                <tr>
-                    <td class="label"><label for="emailAddress">EMAIL:*</label></td>
-                    <td><input type="email" id="emailAddress" name="Email" placeholder="alexjessup@proton.me" required></td>
-                </tr>
-                <tr>
-                    <td class="label"><label for="phoneNumber">PHONE:</label></td>
-                    <td><input type="tel" id="phoneNumber" name="Phone" placeholder="(000) 000-0000"></td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="label">PREFERRED CONTACT METHOD:</td>
-                </tr>
-                <tr>
-                    <td><input type="radio" id="email" name="ContactType" value="Email" checked><label for="email">EMAIL</label></td>
-                    <td><input type="radio" id="phone" name="ContactType" value="Phone"><label for="phone">PHONE</label></td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="label"><label for="details">MESSAGE:*</label></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><textarea id="details" rows="8" maxlength="10000" name="details" placeholder="Rad page!" required></textarea></td>
-                </tr>
-            </table>
-            <br>
-            <div class="button-group">
+        <form id="contact" action="mailto:alexjessup@proton.me" method="POST" enctype="text/plain">
+              <div class="form-group">
+                <input type="text" id="from" name="From" placeholder="Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" id="emailAddress" name="Email" placeholder="Email" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" id="phoneNumber" name="Phone" placeholder="Phone">
+              </div>
+              <div class="form-group">
+                <textarea id="details" rows="8" maxlength="10000" name="details" placeholder="Message" required></textarea>
+              </div>
+              <div class="form-group label">PREFERRED CONTACT METHOD:</div>
+              <div class="form-group contact-methods">
+                <label><input type="radio" id="email" name="ContactType" value="Email" checked> EMAIL</label>
+                <label><input type="radio" id="phone" name="ContactType" value="Phone"> PHONE</label>
+              </div>
+              <div class="button-group">
                 <input type="submit" name="submit" value="SUBMIT">
                 <input type="reset" name="reset" value="RESET">
-            </div>
+              </div>
         </form>
     </body>
     <footer>

@@ -415,7 +415,7 @@ h3 a:hover {
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin: 0 0 10 0;
+  margin: 0px 0 10px 0;
 }
 
 .button-group input[type="submit"],

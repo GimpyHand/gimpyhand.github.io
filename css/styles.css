@@ -536,3 +536,32 @@ footer {
       transform: translate3d(0,-100%,0);
   }
 }
+
+/* =============================
+   Anchor offset for sticky navigation
+   Ensures in-page anchors (e.g., #about) are scrolled below the sticky nav
+   by providing a top padding to the scroll container and per-element margins.
+   Adjust --nav-height if the nav height changes.
+   ============================= */
+:root {
+  /* Approximate sticky nav height (padding + line-height). Tweak as needed. */
+  --nav-height: 40px;
+}
+
+/* If the nav wraps into two lines on smaller screens, increase the offset */
+@media (max-width: 900px) {
+  :root { --nav-height: 120px; }
+}
+
+/* Native offset for hash navigation and programmatic scrolling */
+html {
+  scroll-padding-top: var(--nav-height);
+  scroll-behavior: smooth; /* Optional: comment out if not desired */
+}
+
+/* Ensure any element with an id (typical anchor targets) sits below nav */
+[id] {
+  scroll-margin-top: var(--nav-height);
+}
+
+

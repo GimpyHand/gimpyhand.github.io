@@ -1,7 +1,38 @@
+/* Password Verification page scoped overrides to match root site style */
+.pwv {
+  color: #FFFFFF;
+}
+
+/* Panel/container to mimic root form width/feel */
+.pwv .pwv-panel {
+  width: clamp(360px, 90vw, 640px);
+  margin: 10px auto 0 auto;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid #8271ff;
+  background: transparent;
+}
+
+/* Inputs to match #contact input styles from root */
+.pwv .form-control {
+  background: transparent;
+  border: 1px solid #8271ff;
+  border-radius: 8px;
+  padding: 10px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.pwv .form-control::placeholder {
+  color: #00F8F1;
+  opacity: .5;
+  text-align: center;
+}
+
+/* Keep centered appearance when used with right-side toggle button */
 /* Center text/placeholder visually across the whole input group (input + toggle button)
    by compensating the space taken by the right-side button. */
-
-.form-control.center-compensated {
+.pwv .form-control.center-compensated {
   text-align: center; /* center the input text and placeholder */
   /* Add LEFT padding equal to the toggle button width so the visual center
      aligns with the center of the whole input group (input + button). */
@@ -9,6 +40,29 @@
 }
 
 /* Ensure placeholder inherits centering in some browsers */
-.form-control.center-compensated::placeholder {
+.pwv .form-control.center-compensated::placeholder {
   text-align: center;
+}
+
+/* Eye-toggle button harmonized with site palette */
+.pwv .btn.btn-outline-secondary {
+  border-color: #8271ff;
+  color: #8271ff;
+  background: transparent;
+  border-radius: 8px;
+}
+.pwv .btn.btn-outline-secondary:hover,
+.pwv .btn.btn-outline-secondary:focus {
+  background-color: rgba(130, 113, 255, 0.15);
+  color: #8271ff;
+}
+
+/* Main action button matching root button-group style */
+.pwv .btn.btn-secondary {
+  background: #8271ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 18px;
+  font-size: medium;
 }

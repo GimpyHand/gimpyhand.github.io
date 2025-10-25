@@ -217,6 +217,22 @@ h3 a:hover {
   scale: 1.05;
   box-shadow: 0 0 25px 10px #00F8F1;
 }
+
+/* Ensure project cards on /projects behave like the home page thumbnails */
+.projects .project-card {
+  width: 19%;
+  display: block;
+}
+.projects .project-card img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.projects .project-card:hover img {
+  scale: 1.05;
+  box-shadow: 0 0 25px 10px #00F8F1;
+}
 /* =============================
    6) Skills (Charts, Donuts, Labels, Table Layout)
    ============================= */
@@ -545,7 +561,7 @@ footer {
    ============================= */
 :root {
   /* Approximate sticky nav height (padding + line-height). Tweak as needed. */
-  --nav-height: 40px;
+  --nav-height: 35px;
 }
 
 /* If the nav wraps into two lines on smaller screens, increase the offset */
@@ -563,5 +579,18 @@ html {
 [id] {
   scroll-margin-top: var(--nav-height);
 }
+/* Center text/placeholder visually across the whole input group (input + toggle button)
+   by compensating the space taken by the right-side button. */
 
+.form-control.center-compensated {
+  text-align: center; /* center the input text and placeholder */
+  /* Add LEFT padding equal to the toggle button width so the visual center
+     aligns with the center of the whole input group (input + button). */
+  padding-left: var(--toggle-offset, 2.75rem);
+}
+
+/* Ensure placeholder inherits centering in some browsers */
+.form-control.center-compensated::placeholder {
+  text-align: center;
+}
 

@@ -178,15 +178,44 @@ h3 a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap:.25%;
+  gap: .25%;
   z-index: 1;
 }
 
-.projects img:hover {
-    scale: 1.05;
-    z-index: 2;
-    box-shadow: 0 0 25px 10px #00F8F1;
+.projects > a {
+  width: 19%;
+  display: block;
+  opacity: 1 !important;
+  position: relative;
+}
 
+.projects > a img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.projects img {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Standalone images hover */
+.projects > img:hover {
+  scale: 1.05;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 25px 10px #00F8F1;
+}
+
+/* Linked images hover */
+.projects > a:hover {
+  z-index: 2;
+}
+
+.projects > a:hover img {
+  scale: 1.05;
+  box-shadow: 0 0 25px 10px #00F8F1;
 }
 /* =============================
    6) Skills (Charts, Donuts, Labels, Table Layout)

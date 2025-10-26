@@ -44,7 +44,7 @@ function inputPassword() {
   updateRules();
 }
 
-// Called by the "Check Password" button
+// Called by the "Copy Password" button
 function validatePassword() {
   const { hasLen, hasUpper, hasLower, hasDigit, hasSpecial, matches } = updateRules();
   const ok = hasLen && hasUpper && hasLower && hasDigit && hasSpecial && matches;
@@ -166,7 +166,7 @@ function adjustCentering() {
       input.style.setProperty('--toggle-offset', offset + 'px');
     });
   } catch (_) {
-    // no-op
+    // Ignore errors
   }
 }
 

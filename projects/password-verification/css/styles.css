@@ -86,10 +86,12 @@
     background-color: #00F8F1;
     color: #3b3b3b;
     border-color: #8271ff;
+    opacity: 0.8;
 }
 
 .list-group-item-danger {
     background-color: #8271ff;
     color: #ffffff;
     border-color: #00F8F1;
+    opacity: 0.8;
 }

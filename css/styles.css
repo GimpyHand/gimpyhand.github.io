@@ -180,6 +180,7 @@ h3 a:hover {
   align-items: center;
   gap: .25%;
   z-index: 1;
+  text-align: center;
 }
 
 .projects > a {
@@ -222,6 +223,7 @@ h3 a:hover {
 .projects .project-card {
   width: 19%;
   display: block;
+
 }
 .projects .project-card img {
   width: 100%;

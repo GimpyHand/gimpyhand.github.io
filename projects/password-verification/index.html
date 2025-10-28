@@ -1,25 +1,28 @@
 <!DOCTYPE html>
- <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="icon" href="assets/favicon.ico" type="image/x-icon"/>
-        <title>Alex Jessup's Portfolio</title>
-    </head>
-    <body>
-        <nav>
-            <a href="index.html" class="nav">HOME</a>
-            <a href="#about" class="nav">ABOUT</a>
-            <a href="#experience" class="nav">EXPERIENCE</a>
-            <a href="#projects" class="nav">PROJECTS</a>
-            <a href="#skills" class="nav">SKILLS</a>
-            <a href="#contact" class="nav">CONTACT</a>
-            </nav>
-        <div class="s__rays">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="../../../assets/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+  <nav>
+    <a href="../../index.html" class="nav">HOME</a>
+    <a href="../../index.html#about" class="nav">ABOUT</a>
+    <a href="../../index.html#experience" class="nav">EXPERIENCE</a>
+    <a href="../projects.html" class="nav">PROJECTS</a>
+    <a href="../../index.html#skills" class="nav">SKILLS</a>
+    <a href="../../index.html#contact" class="nav">CONTACT</a>
+  </nav>
+  <div class="s__rays">
             <div class="a-rays" data-angle="90" data-velocity="1">
             <svg class="a__scene" width="395px" height="3118px">
             <g>
@@ -47,100 +50,69 @@
             </svg>
             </div>
         </div>
-        <h1 id="banner">WELCOME TO MY DIGITAL PORFTOLIO</h1>
-        <img src="assets/Avatar.webp" alt="Illustrated headshot of Alex" id="avatar" title="Alex Jessup">
-        <h2 id="about">WHO AM I?</h2>
-             <p>
-                 I’m not your typical developer/computer guy. Sure, I work in IT and have spent years in roles ranging from system administration and hardware support to DevOps engineering, but my path here wasn’t just about computers. I studied graphic design, love building things with my hands, and enjoy projects that let me balance creativity with problem-solving.
-                 <br>
-                 <br>
-                 When I’m not coding or learning something new in my developer bootcamp, you’ll probably find me out riding motorcycles, fixing engines, or working on home renovations and landscaping projects. I also love video games, building random projects, and most importantly, spending time with my wife and son. For me, technology is just one piece of the bigger picture — I’m always looking for ways to bring together design, engineering, and real life.
-             </p>
-        <h2 id="experience">EXPERIENCE</h2>
-        <h3 id="cadorath"><a href="https://cadorath.com" target="_blank">CADORATH AEROSPACE - DEVOPS SPECIALIST</a></h3>
-        <h4 id="cadorathdate">2022-04 — PRESENT</h4>
-            <p>
-                As the sole DevOps Specialist and full-stack developer, I manage a complex, multi-department ERP system spanning five separate codebases and nearly two hundred modules—much of it undocumented and legacy. I actively reverse-engineer the stack to unify fragmented repositories across GitHub, development, and production environments while modernizing outdated frameworks to ensure stability and scalability. These efforts reduce hidden technical debt and keep a mission-critical platform reliable for Finance, Operations, and IT.<br><br>
+  <script src="scripts/script.js"></script>
+  <div class="pwv">
+    <h2>Password Complexity Verification</h2>
+    <div class="pwv-panel">
+      <div id="alertContainer" class="mt-2"></div>
+      <ul class="list-group list-group-flush text-center">
+        <li id="rule-length" class="list-group-item">At least 8 characters long</li>
+        <li id="rule-upper" class="list-group-item">Contains at least one uppercase letter</li>
+        <li id="rule-lower" class="list-group-item">Contains at least one lowercase letter</li>
+        <li id="rule-number" class="list-group-item">Contains at least one number</li>
+        <li id="rule-special" class="list-group-item">Contains a special character (e.g., !, @, #, $, %, ^, &, *)</li>
+        <li id="rule-match" class="list-group-item">Both password entries must match</li>
+      </ul>
 
-                In addition to maintaining platform health, I design and support automation tools that streamline cross-functional workflows, using Python, JavaScript, and PHP to replace manual processes with efficient, repeatable solutions. I leverage Docker and Git to containerize services and enforce consistent environments, laying the foundation for a CI/CD pipeline that accelerates delivery and strengthens release reliability. I also perform data analysis and reporting with SQL, Python, and Microsoft 365, creating dashboards and ad-hoc insights that guide decision-making. Partnering closely with stakeholders across departments, I gather requirements, troubleshoot issues, and deliver new features—serving as the single point of contact for all development needs.
-            </p>
-<br>
-        <h3 id="jerky"><a href="https://jessupsjerky.ca" target="_blank">JESSUP'S JERKY - OWNER</a></h3>
-        <h4 id="jerkyddate">2022-03 — PRESENT</h4>
-            <p>
-                I oversee all aspects of operations, from recipe development and production to marketing, sales, and distribution. I manage sourcing, food preparation, and quality control to ensure every batch meets high standards of flavor and consistency.<br><br>
+      <div class="input-group mt-4">
+        <input
+          type="password"
+          id="passwordInput"
+          class="form-control center-compensated"
+          placeholder="Enter your password"
+          oninput="inputPassword(this.value)"
+          aria-describedby="togglePassword"
+        >
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          id="togglePassword"
+          title="Show / hide password"
+          onclick="(function(btn){const pw=document.getElementById('passwordInput'); if(pw.type==='password'){pw.type='text'; btn.innerHTML=btn.getAttribute('data-hide-icon'); } else {pw.type='password'; btn.innerHTML=btn.getAttribute('data-show-icon');} adjustCentering();})(this)"
+          aria-pressed="false"
+          aria-label="Toggle password visibility"
+          data-show-icon='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5C5.63636 5 2 12 2 12C2 12 5.63636 19 12 19C18.3636 19 22 12 22 12C22 12 18.3636 5 12 5ZM12 16C9.29091 16 7.09091 12 7.09091 12C7.09091 12 9.29091 8 12 8C14.7091 8 16.9091 12 16.9091 12C16.9091 12 14.7091 16 12 16Z" stroke="#00F8F1" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="#00F8F1" stroke-width="1.5"/></svg>'
+          data-hide-icon='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20" stroke="#8271ff" stroke-width="1.5"/><path d="M14 14.2362C13.4692 14.7112 12.7684 15.0001 12 15.0001C10.3431 15.0001 9 13.657 9 12.0001C9 11.2317 9.28885 10.531 9.76389 10.0001" stroke="#8271ff" stroke-width="1.5"/><path d="M6.5 6.67334C3.952 8.3961 2 12.0001 2 12.0001C2 12.0001 5.63636 19.0001 12 19.0001C13.9134 19.0001 15.584 18.3215 17 17.4264M19.5 15.3267C20.642 14.0519 22 12.0001 22 12.0001C22 12.0001 18.3636 5.00006 12 5.00006C11.1425 5.00006 10.3289 5.11956 9.5666 5.33728" stroke="#8271ff" stroke-width="1.5"/></svg>'>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5C5.63636 5 2 12 2 12C2 12 5.63636 19 12 19C18.3636 19 22 12 22 12C22 12 18.3636 5 12 5ZM12 16C9.29091 16 7.09091 12 7.09091 12C7.09091 12 9.29091 8 12 8C14.7091 8 16.9091 12 16.9091 12C16.9091 12 14.7091 16 12 16Z" stroke="#00F8F1" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="#00F8F1" stroke-width="1.5"/></svg>
+        </button>
+      </div>
 
-                In addition to production, I handle brand development, online and in-person sales, and customer engagement, building a loyal customer base through strong relationships and a commitment to quality. Running the business end-to-end allows me to combine creativity with entrepreneurial drive, growing Jessup’s Jerky into a recognizable local brand.
-            </p>
-<br>
-        <h3 id="intouch"><a href="https://intouchcx.com" target="_blank">INTOUCHCX - WORKFORCE MANAGER</a></h3>
-        <h4 id="intouchdate">2019-11 — 2021-04</h4>
-            <p>
-                As Workforce Manager, I supervised and trained a team of analysts in call center processes, ensuring they had the expertise to manage forecasting, scheduling, and real-time performance adjustments. I provided leadership and coaching to build a high-performing team capable of maintaining service-level agreements while adapting to rapidly changing conditions.<br><br>
+      <div class="input-group mt-2">
+        <input
+          type="password"
+          id="passwordVerify"
+          class="form-control center-compensated"
+          placeholder="Re-enter your password"
+          oninput="inputPassword(this.value)"
+          aria-describedby="togglePassword"
+        >
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          id="togglePasswordVerify"
+          title="Show / hide password"
+          onclick="(function(btn){const pw=document.getElementById('passwordVerify'); if(pw.type==='password'){pw.type='text'; btn.innerHTML=btn.getAttribute('data-hide-icon'); } else {pw.type='password'; btn.innerHTML=btn.getAttribute('data-show-icon');} adjustCentering();})(this)"
+          aria-pressed="false"
+          aria-label="Toggle password visibility"
+          data-show-icon='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5C5.63636 5 2 12 2 12C2 12 5.63636 19 12 19C18.3636 19 22 12 22 12C22 12 18.3636 5 12 5ZM12 16C9.29091 16 7.09091 12 7.09091 12C7.09091 12 9.29091 8 12 8C14.7091 8 16.9091 12 16.9091 12C16.9091 12 14.7091 16 12 16Z" stroke="#00F8F1" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="#00F8F1" stroke-width="1.5"/></svg>'
+          data-hide-icon='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20" stroke="#8271ff" stroke-width="1.5"/><path d="M14 14.2362C13.4692 14.7112 12.7684 15.0001 12 15.0001C10.3431 15.0001 9 13.657 9 12.0001C9 11.2317 9.28885 10.531 9.76389 10.0001" stroke="#8271ff" stroke-width="1.5"/><path d="M6.5 6.67334C3.952 8.3961 2 12.0001 2 12.0001C2 12.0001 5.63636 19.0001 12 19.0001C13.9134 19.0001 15.584 18.3215 17 17.4264M19.5 15.3267C20.642 14.0519 22 12.0001 22 12.0001C22 12.0001 18.3636 5.00006 12 5.00006C11.1425 5.00006 10.3289 5.11956 9.5666 5.33728" stroke="#8271ff" stroke-width="1.5"/></svg>'
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5C5.63636 5 2 12 2 12C2 12 5.63636 19 12 19C18.3636 19 22 12 22 12C22 12 18.3636 5 12 5ZM12 16C9.29091 16 7.09091 12 7.09091 12C7.09091 12 9.29091 8 12 8C14.7091 8 16.9091 12 16.9091 12C16.9091 12 14.7091 16 12 16Z" stroke="#00F8F1" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke="#00F8F1" stroke-width="1.5"/></svg>
+        </button>
+      </div>
 
-                I also developed custom tools to improve the speed and accuracy of data analysis, giving leadership better visibility into call volume patterns and staffing needs. Using these insights, I implemented staffing strategies that optimized resource allocation, reduced costs, and improved overall operational efficiency. These efforts resulted in measurable cost savings while supporting consistent, high-quality customer service.
-            </p>
-<br>
-        <h3 id="rewired"><a href="https://github.com/gimpyhand" target="_blank">REWIRED SOLUTIONS - OWNER</a></h3>
-        <h4 id="rewireddate">2005-03 — PRESENT</h4>
-            <p>
-                As Owner of Rewired Solutions, I provide end-to-end technology services for small to medium-sized businesses, including web design and development, custom application builds, networking, and IT infrastructure. I partner directly with clients to understand their unique needs, then deliver tailored solutions that enhance efficiency, strengthen security, and support business growth.<br><br>
-
-                My work spans full-stack web development, hardware and security system implementation, and ongoing IT support and training. I design and deploy scalable solutions that integrate seamlessly with existing operations, while ensuring clients have the knowledge and tools to manage their systems effectively. By combining technical expertise with a customer-focused approach, I help businesses modernize their technology landscape and achieve long-term stability.
-            </p>
-        <h2 id="projects">PROJECTS</h2>
-            <div class="projects">
-                <a  href="projects/projects.html" title="View Projects" aria-label="View Projects">
-                    <img src="assets/coding.webp" alt="Coding project" title="Coding projects">
-                </a>
-                <img src="assets/design.webp" alt="Design project" title="Design projects">
-                <img src="assets/modelling.webp" alt="3D modelling project" title="3D modelling projects">
-                <img src="assets/music.webp" alt="Music project" title="Music projects">
-                <img src="assets/blog.webp" alt="Blog" title="Blog">
-            </div>
-        <h2 id="skills">SKILLS</h2>
-        <div class="charts-container">
-            <table>
-                <tr><td><div class="chart html donut"></div>
-                    <div class="skill">HTML/CSS</div></td>
-                <td><div class="chart javascript donut"></div>
-                    <div class="skill">JAVASCRIPT</div></td>
-                <td><div class="chart python donut"></div>
-                <div class="skill">PYTHON</div></td>
-                <td><div class="chart linux donut"></div>
-                    <div class="skill">LINUX</div></td>
-                <td><div class="chart blender donut"></div>
-                    <div class="skill">BLENDER</div></td>
-                <td><div class="chart adobe donut"></div>
-                    <div class="skill">ADOBE CS</div></td>
-            </table>
-        </div>
-        <h2 id="letschat">WANNA CHAT?</h2>
-        <form id="contact" action="mailto:alexjessup@proton.me" method="POST" enctype="text/plain">
-              <div class="form-group">
-                <input type="text" id="from" name="From" placeholder="Name" required>
-              </div>
-              <div class="form-group">
-                <input type="email" id="emailAddress" name="Email" placeholder="Email" required>
-              </div>
-              <div class="form-group">
-                <input type="tel" id="phoneNumber" name="Phone" placeholder="Phone">
-              </div>
-              <div class="form-group">
-                <textarea id="details" rows="8" maxlength="10000" name="details" placeholder="Message" required></textarea>
-              </div>
-              <div class="form-group label">PREFERRED CONTACT METHOD:</div>
-              <div class="form-group contact-methods">
-                <label><input type="radio" id="email" name="ContactType" value="Email" checked> EMAIL</label>
-                <label><input type="radio" id="phone" name="ContactType" value="Phone"> PHONE</label>
-              </div>
-              <div class="button-group">
-                <input type="submit" name="submit" value="SUBMIT">
-                <input type="reset" name="reset" value="RESET">
-              </div>
-        </form>
-    </body>
-    <footer>
-        Copyright © 2025 <a href="https://www.linkedin.com/in/alexpjessup/" target="_blank">Alex Jessup</a>
-    </footer>
+      <button id="savePasswordBtn" class="btn btn-secondary mt-3 d-block mx-auto" onclick="savePassword()">Copy Password</button>
+    </div>
+  </div>
+</body>
 </html>

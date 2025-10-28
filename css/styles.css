@@ -178,15 +178,60 @@ h3 a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap:.25%;
+  gap: .25%;
   z-index: 1;
 }
 
-.projects img:hover {
-    scale: 1.05;
-    z-index: 2;
-    box-shadow: 0 0 25px 10px #00F8F1;
+.projects > a {
+  width: 19%;
+  display: block;
+  opacity: 1 !important;
+  position: relative;
+}
 
+.projects > a img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.projects img {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Standalone images hover */
+.projects > img:hover {
+  scale: 1.05;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 25px 10px #00F8F1;
+}
+
+/* Linked images hover */
+.projects > a:hover {
+  z-index: 2;
+}
+
+.projects > a:hover img {
+  scale: 1.05;
+  box-shadow: 0 0 25px 10px #00F8F1;
+}
+
+/* Ensure project cards on /projects behave like the home page thumbnails */
+.projects .project-card {
+  width: 19%;
+  display: block;
+}
+.projects .project-card img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.projects .project-card:hover img {
+  scale: 1.05;
+  box-shadow: 0 0 25px 10px #00F8F1;
 }
 /* =============================
    6) Skills (Charts, Donuts, Labels, Table Layout)
@@ -507,3 +552,31 @@ footer {
       transform: translate3d(0,-100%,0);
   }
 }
+
+/* =============================
+   Anchor offset for sticky navigation
+   Ensures in-page anchors (e.g., #about) are scrolled below the sticky nav
+   by providing a top padding to the scroll container and per-element margins.
+   Adjust --nav-height if the nav height changes.
+   ============================= */
+:root {
+  /* Approximate sticky nav height (padding + line-height). Tweak as needed. */
+  --nav-height: 35px;
+}
+
+/* If the nav wraps into two lines on smaller screens, increase the offset */
+@media (max-width: 900px) {
+  :root { --nav-height: 120px; }
+}
+
+/* Native offset for hash navigation and programmatic scrolling */
+html {
+  scroll-padding-top: var(--nav-height);
+  scroll-behavior: smooth; /* Optional: comment out if not desired */
+}
+
+/* Ensure any element with an id (typical anchor targets) sits below nav */
+[id] {
+  scroll-margin-top: var(--nav-height);
+}
+

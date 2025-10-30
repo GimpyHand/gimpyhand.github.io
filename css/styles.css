@@ -477,6 +477,15 @@ h3 a:hover {
   color: #fff;
   cursor: pointer;
 }
+.btn.btn-secondary.mt-1 {
+  background: #8271ff;
+  color: #fff;
+  border-radius: 8px;
+  font-size: medium;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+}
 
 
 /* =============================

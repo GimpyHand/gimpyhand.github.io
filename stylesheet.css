@@ -1,0 +1,151 @@
+/* Resets */
+html, body, ul, li, h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Declares font family, text colour and adds a subtle pattern to the background */
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: #00F8F1;
+  background-image: url('img/texture.png');
+  background-color: #3b3b3b;
+}
+
+
+/* Make container centered in page and center text inside <div> */
+.container {
+  position: absolute;
+  top:40%;
+  left:50%;
+  width:400px;  
+  margin: -220px 0 0 -200px;  
+  text-align: center;
+}
+
+
+/* Makes image a circle and sizes it to 40% of the outside container */
+.container img { 
+  max-width: 70%;
+  border-radius: 50%;
+}
+
+/* Clears bullet points and places <li> items next to each other instead of stacked on top and changes font */
+li {
+  display: inline;
+  list-style: none;
+  padding: 0 4px;
+  font-family: "VT323", monospace;
+}
+
+
+/* Remove default hyperlink styling, add our own colours and change font-size*/
+a, a:visited {
+  color:#00F8F1;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+/* This changes the link colour when someone hovers their mouse over it */
+a:hover {
+  color: #8271ff;
+}
+
+/* Style our header tags */
+h1, h2 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 10px 0 0
+}
+
+h2 {
+  font-size: 30px;
+  color: #8271ff;
+  
+}
+
+
+/* Adds some space around our bio */
+p {
+  padding: 20px 0;
+  font-size: 20px
+    
+}
+
+
+/* Style our 'available' and 'unavailable' classes */
+.available, .unavailable {
+  width: 60%;
+  margin:10px auto 20px;
+  border-radius: 3px;
+  padding: 14px 0;
+}
+
+.available {
+  color: #fff;
+  background-color: #8271ff;
+  /*font-size: 20px;*/
+}
+
+.unavailable {
+  color: #999;
+  background-color: #eee;
+}
+
+/* =============================
+   9) Background Rays
+   ============================= */
+.s__rays {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  width: 350px;
+  z-index: -1;
+
+}
+
+.a-rays {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: .3;
+    pointer-events: none;
+    transform: skew(-20deg);
+    transition: opacity .7s linear;
+    will-change: opacity;
+    z-index: -1;
+}
+
+.a-rays .a__scene {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translate3d(-50%,0,0);
+}
+.a-rays .a__scene path {
+    stroke-linecap: round;
+    stroke-width: 2px;
+    animation: a-rays-move 25s linear infinite;
+    will-change: transform;
+    z-index: -1;
+}
+/* Background Rays animation */
+@keyframes a-rays-move {
+  0% {
+      transform: translateZ(0);
+  }
+  100% {
+      transform: translate3d(0,-100%,0);
+  }
+}
